@@ -1,0 +1,55 @@
+/* ProductCard.module.css */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.cardInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 80px;
+}
+
+.cardTitle {
+  font-size: 0.813rem;
+  color: #333;
+  margin: 0.5rem 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardPrice {
+  font-size: 0.813rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.cardButton {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #333;
+  color: #333;
+  padding: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.cardButton:hover {
+  background-color: #333;
+  color: #fff;
+}
