@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
@@ -10,7 +10,7 @@ import Cart from "./components/Cart";
 import "./App.css";
 
 function App() {
-  // 1) Define cart sate in App
+  // 1) Define cart state in App
   const [cartItems, setCartItems] = useState([]);
 
   // 2) Handler: add item to cart
@@ -44,20 +44,17 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <Navbar
         cartItemsCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
       />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* Passing addToCart to Shop so ProductCards can call it */}
         <Route path="/shop" element={<Shop addToCart={addToCart} />} />
-        {/* Optional Single Product Route */}
         <Route
           path="/shop/:id"
           element={<SingleProduct addToCart={addToCart} />}
         />
-        {/* Pass cartItems + handlers to Cart */}
         <Route
           path="/cart"
           element={
@@ -71,7 +68,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 }
 
